@@ -49,7 +49,7 @@ $(document).ready(function (e) {
 	// Declaring variables
 	var maxCards,displayNum,compCard,compCarduID,cardInfo,pleaseWait,matchID;
 	var cardInfo = [];
-	var imgString = "../lib/images/cards/";
+	var imgString = "../images/cards/";
 	var initGame = function()
 	{
 		displayNum = 0;
