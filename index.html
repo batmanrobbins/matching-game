@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1, edge=1">
+<meta name="HandheldFriendly" content="True"> 
+<meta name="MobileOptimized" content="320"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- MS Clear Type --> 
+<meta http-equiv="cleartype" content="on"> 
+<!-- Apple iOS --> 
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<title>HTML5 Match and Win Game</title>
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="css/game.css" type="text/css" />
+<script src="js/modernizr.js"></script>
+<script type="text/javascript">
+
+//image rotation fix for ie11
+	if(navigator.userAgent.indexOf("11.0")>-1){
+		document.write('<style>.flipped .img-responsive {-webkit-backface-visibility: visible;-moz-backface-visibility: visible;-ms-backface-visibility: visible;-o-backface-visibility: visible;backface-visibility: visible;}</style>');
+	}
+//image rotation fix for ie10
+	if ("onpropertychange" in document && !!window.matchMedia) {
+document.write('<style>.front {z-index:10!important;}.back {z-index:15!important;}.flipped img{z-index:5!important;}.flipped .back {opacity:0;-webkit-backface-visibility: visible;-moz-backface-visibility: visible;-ms-backface-visibility: visible;-o-backface-visibility: visible;backface-visibility: visible;}.flipped .front {-webkit-transform:perspective(800px) rotateY( 0deg ); -moz-transform:perspective(800px) rotateY( 0deg );-ms-transform:perspective(800px) rotateY( 0deg );-o-transform:perspective(800px) rotateY( 0deg );transform:perspective(800px) rotateY( 0deg );}.gameCard.flipped {-webkit-transform: rotateY( 0deg );-moz-transform: rotateY( 0deg );-ms-transform: rotateY( 0deg );-o-transform: rotateY( 0deg );transform: rotateY( 0deg );}</style>');
+	}
+//image rotation fix for ie9
+if(!Modernizr.csstransforms3d) {
+		document.write('<style>.front {z-index:10!important;}.back {z-index:15!important;}.flipped .img-responsive{z-index:5!important;}</style>');
+	}
+
+</script>
+</head>
+<body>
+<div class="containerWrap">
+<div class="container">
+  <div class="headline text-center"><img src="images/headline.png" alt="Great Matchups Instant Win Game" class="img-responsive center-block"/><p>Click on the squares to find the matches and see if you are an instant winner.</p></div>
+  <div class="GameArea"></div>
+  <p id="endGame" class="well well-sm col-sm-6 col-sm-offset-3 hidden">Like what you see?<br>
+<a href="mailto:brobbins84@gmail.com" target="_blank">Brian</a> can do more like this!</p>
+</div>
+<div class="modal fade" id="loseMsg">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <p align="center"> <strong>You are not a winner this time, but you can come back tomorrow to play again!</strong> </p>
+<p align="center"> <em>(Call to Action to brand site, coupon, social channels, etc.)</em> </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    <!-- /.modal-content --> 
+  </div>
+  <!-- /.modal-dialog --> 
+</div>
+<div class="modal fade" id="GameInfo">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <div class="center-block"><img src="#" class="cardImg center-block img-responsive" alt="card image"/></div>
+        <div class="center-block cardInfo center-block" style="text-align:center;"></div>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn btn-default" data-dismiss="modal">&times;</button>
+      </div>
+    </div>
+    <!-- /.modal-content --> 
+  </div>
+  <!-- /.modal-dialog --> 
+</div>
+<!-- /.modal --> 
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js" type="text/javascript"></script> 
+<script src="js/game.js" type="text/javascript"></script>
+</body>
+</html>
